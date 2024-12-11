@@ -1,0 +1,68 @@
+map_x_offset: -91.07
+map_y_offset: -2
+
+pick_path:
+  pose0:     # 当前位置
+    map_x: 13
+    map_y: -8
+    heading: -90
+    vel: 1  
+  pose1:     # 当前位置
+    map_x: 13
+    map_y: 4
+    heading: -180
+    vel: 1.4  
+  pose2:     # 当前位置
+    map_x: 4
+    map_y: 0
+    heading: -90
+    vel: 1.4
+    circle: [4, 90, 180, 6, 1]   # 半径 开始角度 结束角度 数量 顺序(1 正  -1 反)
+  pose3:     # 当前位置
+    map_x: 0
+    map_y: -5.5
+    heading: -90
+    vel: 0.8
+  pose4:     # 当前位置
+    map_x: 0
+    map_y: -13.5
+    heading: -90
+    vel: 0.5
+    
+release_path:
+  type: 1    # 0 表示疏停  1 密停  2 车库
+  pose0:     # 当前位置
+    map_x: 0
+    map_y: -13.5
+    heading: -90
+    vel: 1.4 
+  pose1:     # 当前位置
+    map_x: 4
+    map_y: 0
+    heading: -90
+    vel: 1.4
+    circle: [4, 180, 90, 6, -1]   # 半径 开始角度 结束角度 数量 顺序(1 正  -1 反)
+  pose2:     # 当前位置
+    map_x: 13
+    map_y: 4
+    heading: -90
+    vel: 1 
+  pose3:     # 当前位置
+    map_x: 13
+    map_y: -8
+    heading: -90
+    vel: 0.5     
+
+move_path:
+  pose0:     
+    map_x: 0
+    map_y: 0
+    heading: 0
+    vel: 0.5
+    circle: [4, 0, 90, 3, -1]  # 半径 开始角度 结束角度 数量 顺序(1 正  -1 反)
+
+  # pose1:     # 当前位置
+  #   map_x: -91.07
+  #   map_y: -2
+  #   heading: -89.6
+  #   vel: 0.5  

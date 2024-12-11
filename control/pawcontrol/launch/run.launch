@@ -1,0 +1,13 @@
+<launch>
+    <include file="$(find c200_lidar)/launch/c200_4.launch"/>
+
+    <include file="$(find laserscan_check)/launch/run.launch"/>
+
+    <node pkg="pawcontrol" type="pawcontrol" name="pawcontrol" output="screen">
+        <param name="front_wheel_stop_distance" value="0.04" /> 
+        <param name="back_wheel_stop_distance" value="0.02" />
+    </node>
+
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pawcontrol)/show.rviz" /> -->
+
+</launch> 

@@ -1,0 +1,74 @@
+<launch>
+  <arg name="frame_id" default="scan"/>
+  <!-- <arg name="host" default="192.168.3.112"/> -->
+  <arg name="port" default="2111"/>
+  <arg name="range_min" default="0.05"/>
+  <arg name="range_max" default="30"/>
+  <arg name="start_angle" default="-45"/>
+  <arg name="stop_angle" default="225"/>
+  <arg name="offset_angle" default="-90"/>
+  <arg name="filterswitch" default="true"/>
+
+  
+  <!-- C200 Driver -->
+  <node pkg="c200_lidar" type="c200_lidar_node" name="c200_lidar_new_node1" respawn="true" output="screen">
+    <param name="frame_id" value="new_scan1"/>
+    <param name="host" value="192.168.3.111"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <!-- <param name="start_angle" value="3"/> -->
+    <!-- <param name="stop_angle" value="270"/> -->
+    <param name="offset_angle" value="-47"/>
+    <param name="filterswitch" value="$(arg filterswitch)"/>
+  </node>
+ 
+  <node pkg="c200_lidar" type="c200_lidar_node" name="c200_lidar_new_node2" respawn="true" output="screen">
+    <param name="frame_id" value="new_scan2"/>
+    <param name="host" value="192.168.3.112"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <!-- <param name="start_angle" value="3"/> -->
+    <!-- <param name="stop_angle" value="270"/> -->
+    <param name="offset_angle" value="-40"/>
+    <param name="filterswitch" value="$(arg filterswitch)"/>
+  </node>
+
+  <node pkg="c200_lidar" type="c200_lidar_node" name="c200_lidar_new_node3" respawn="true" output="screen">
+    <param name="frame_id" value="new_scan3"/>
+    <param name="host" value="192.168.3.113"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <!-- <param name="start_angle" value="-90"/> -->
+    <!-- <param name="stop_angle" value="177"/> -->
+    <param name="offset_angle" value="-131"/>
+    <param name="filterswitch" value="$(arg filterswitch)"/>
+  </node>
+
+  <node pkg="c200_lidar" type="c200_lidar_node" name="c200_lidar_new_node4" respawn="true" output="screen">
+    <param name="frame_id" value="new_scan4"/>
+    <param name="host" value="192.168.3.114"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <!-- <param name="start_angle" value="-90"/> -->
+    <!-- <param name="stop_angle" value="177"/> -->
+    <param name="offset_angle" value="-131"/>
+    <param name="filterswitch" value="$(arg filterswitch)"/>
+  </node>
+
+
+
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_scan1" args="-2.96 -1.46 0 3.14 0 0 base_link new_scan1"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_scan2" args="2.96 1.46 0 0 0 0 base_link new_scan2"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_scan3" args="-2.96 1.46 0 3.14 0 0 base_link new_scan3"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_scan4" args="2.96 -1.46 0 0 0 0 base_link new_scan4"/>
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_scan4" args="2.36 -1.37 0 1.57 0 3.14 base_link scan4"/> -->
+  
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find c200_lidar)/rviz/rviz_4_new.rviz" required="true" /> -->
+
+</launch>

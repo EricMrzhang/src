@@ -1,0 +1,55 @@
+<!-- 16线雷达调试 -->
+<launch> 
+    <!-- <include file="$(find gps)/launch/run.launch"/>
+    <param name="/gps_base/sim_flag" value="false"/> -->
+
+    <include file="$(find rslidar_sdk)/launch/start.launch"/>
+
+    <!-- <param name="is_FEC_test" value="false"/> -->
+    
+    <node pkg="around_lidar" name="cloud_tf1" type="cloud_tf" output="screen">
+        <param name="input_topic" value="/rslidar_points1"/>
+    </node>
+    <node pkg="around_lidar" name="cloud_tf2" type="cloud_tf" output="screen">
+        <param name="input_topic" value="/rslidar_points2"/>
+    </node>
+    <node pkg="around_lidar" name="cloud_tf3" type="cloud_tf" output="screen">
+        <param name="input_topic" value="/rslidar_points3"/>
+    </node>
+    <node pkg="around_lidar" name="cloud_tf4" type="cloud_tf" output="screen">
+        <param name="input_topic" value="/rslidar_points4"/>
+    </node>
+
+    <node pkg="around_lidar" name="cloud_segmentation" type="cloud_segmentation" output="screen">
+        <param name="lidar_dead_leftright" value="0.2"/>
+        <param name="lidar_dead_frontback" value="0.1"/>
+    </node>
+
+    <node pkg="around_lidar" name="cloud_calculation_left" type="cloud_calculation_leftright" output="screen">
+        <param name="dir" value="left"/>
+    </node>
+
+   <node pkg="around_lidar" name="cloud_calculation_right" type="cloud_calculation_leftright" output="screen">
+        <param name="dir" value="right"/>
+    </node>
+
+    <node pkg="around_lidar" name="cloud_calculation_front" type="cloud_calculation_frontback" output="screen">
+        <param name="dir" value="front"/>
+    </node>
+        
+    <node pkg="around_lidar" name="cloud_calculation_back" type="cloud_calculation_frontback" output="screen">
+        <param name="dir" value="back"/>
+    </node>
+
+    <node pkg="around_lidar" name="cloud_calculation_inside" type="cloud_calculation_inside" output="screen"/>
+
+    <!-- <node pkg="around_lidar" name="cloud_calculation_marker" type="cloud_calculation_marker" output="screen">
+        <param name="dir" value="front"/>
+    </node> -->
+   
+    <node pkg="around_lidar" name="mi_stop" type="mi_stop" output="screen"/>   
+
+    <!-- <node pkg="around_lidar" name="cloud_calculation" type="cloud_calculation" output="screen"/> -->
+    <!-- <node pkg="rqt_gui" name="rqt_gui" type="rqt_gui" output="screen"/> -->
+    
+</launch> 

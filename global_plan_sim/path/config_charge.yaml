@@ -1,0 +1,58 @@
+pick_path:
+  pose0:     # 当前位置
+    map_x: -79.07
+    map_y: -2
+    heading: 90
+    vel: 0.8 
+  pose1:     # 当前位置
+    map_x: -79.07
+    map_y: -16.5
+    heading: 90
+    vel: 0.4 
+    
+release_path:
+  type: 0    # 0 表示疏停  1 密停  2 车库
+  pose0:     # 当前位置
+    map_x: -79.07
+    map_y: -2
+    heading: 89.6
+    vel: 1 
+  pose1:     # 当前位置
+    map_x: -79.07
+    map_y: -16
+    heading: 89.6
+    vel: 1 
+
+charge_path:
+  pose0:     # 当前位置
+    map_x: -75.41
+    map_y: -23.10
+    heading: 90
+    vel: 1
+  pose1:     # 当前位置
+    map_x: -75.41
+    map_y: -45.00
+    heading: 90
+    vel: 0.3
+  pose2:     # 当前位置
+    map_x: -81.77
+    map_y: -45.00
+    heading: 90
+    vel: 0.3 
+
+move_path:
+  pose0:     # 当前位置
+    map_x: -81.77
+    map_y: -45.00
+    heading: 90
+    vel: 0.3
+  pose1:     # 当前位置
+    map_x: -75.41
+    map_y: -45.10
+    heading: 90
+    vel: 1.0   
+  pose2:     # 当前位置
+    map_x: -75.41
+    map_y: -23.10
+    heading: 90
+    vel: 0.3   

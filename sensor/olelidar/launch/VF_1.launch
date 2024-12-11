@@ -1,0 +1,26 @@
+<launch>
+  <arg name="pkg" value="olelidar"/>
+  <arg name="device" value="VF"/>
+  <arg name="frame_id" default="olelidar"/>
+  <arg name="scan_ip" default="192.168.2.111"/>
+  <arg name="port" default="2368"/>
+  <arg name="local_ip" default="192.168.2.123"/>
+  <arg name="transport" default="udp"/>
+  <arg name="inverted" default="false"/>
+  <arg name="timeFromLidar" default="true"/>
+  <arg name="ntp" default="true"/>
+  <node pkg="$(arg pkg)" type="ros_main" name="ros_node" output="screen">
+    <param name="device" value="$(arg device)"/>
+    <param name="frame_id" value="$(arg frame_id)"/>
+    <param name="scan_ip" value="$(arg scan_ip)"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="local_ip" value="$(arg local_ip)"/>
+    <param name="transport" value="$(arg transport)"/>
+    <param name="inverted" value="$(arg inverted)"/>
+    <param name="timeFromLidar" value="$(arg timeFromLidar)"/>
+    <param name="ntp" value="$(arg ntp)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar/scan"/>
+  </node>
+   <node pkg="rviz" type="rviz" name="rviz_olelidar" args="-d $(find olelidar)/olelidar.rviz" output="screen"/>
+</launch>

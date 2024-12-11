@@ -1,0 +1,6 @@
+<launch>
+    
+    <node pkg="test_comm" type="write_txt" name="write_txt" output="screen"/> 
+    <!-- output="screen"/>    -->
+     
+</launch> 

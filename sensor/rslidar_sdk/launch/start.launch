@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="rslidar_sdk" name="rslidar_sdk_node" type="rslidar_sdk_node" output="screen">
+    <param name="config_path" value=""/>
+  </node>
+  <!-- rviz -->
+  <!-- <node pkg="rviz" name="rviz" type="rviz" args="-d $(find rslidar_sdk)/rviz/rviz.rviz" /> -->
+  
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_rslidar1" args="-2.91 -1.435 0 3.1416 0 0 base_link rslidar1"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_rslidar2" args="2.91 1.435 0 0 0 0 base_link rslidar2"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_rslidar3" args="-2.91 1.435 0 3.1416 0 0 base_link rslidar3"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_new_rslidar4" args="2.91 -1.435 0 0 0 0 base_link rslidar4"/>
+  
+
+</launch>

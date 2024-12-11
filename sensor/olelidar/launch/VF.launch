@@ -1,0 +1,79 @@
+<launch>
+  <arg name="pkg" value="olelidar"/>
+  <arg name="device" value="VF"/>
+  <arg name="frame_id" default="olelidar"/>
+  <!-- <arg name="scan_ip" default="192.168.3.100"/>
+  <arg name="port" default="2368"/>
+  <arg name="local_ip" default="192.168.3.10"/> -->
+  <arg name="transport" default="udp"/>
+  <arg name="inverted" default="false"/>
+  <arg name="timeFromLidar" default="true"/>
+  <arg name="ntp" default="true"/>
+  <node pkg="$(arg pkg)" type="ros_main" name="olelidar1" output="screen">
+    <param name="device" value="$(arg device)"/>
+    <param name="frame_id" value="scan1"/>
+    <param name="scan_ip" value="192.168.2.111"/>
+    <param name="port" value="2367"/>
+    <param name="local_ip" value="192.168.2.123"/>
+    <param name="transport" value="$(arg transport)"/>
+    <param name="inverted" value="$(arg inverted)"/>
+    <param name="timeFromLidar" value="$(arg timeFromLidar)"/>
+    <param name="ntp" value="$(arg ntp)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar1/scan"/>
+  </node>
+  <node pkg="$(arg pkg)" type="ros_main" name="olelidar2" output="screen">
+    <param name="device" value="$(arg device)"/>
+    <param name="frame_id" value="scan2"/>
+    <param name="scan_ip" value="192.168.2.112"/>
+    <param name="port" value="2368"/>
+    <param name="local_ip" value="192.168.2.123"/>
+    <param name="transport" value="$(arg transport)"/>
+    <param name="inverted" value="$(arg inverted)"/>
+    <param name="timeFromLidar" value="$(arg timeFromLidar)"/>
+    <param name="ntp" value="$(arg ntp)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar2/scan"/>
+  </node>
+  <node pkg="$(arg pkg)" type="ros_main" name="olelidar3" output="screen">
+    <param name="device" value="$(arg device)"/>
+    <param name="frame_id" value="scan3"/>
+    <param name="scan_ip" value="192.168.2.113"/>
+    <param name="port" value="2369"/>
+    <param name="local_ip" value="192.168.2.123"/>
+    <param name="transport" value="$(arg transport)"/>
+    <param name="inverted" value="$(arg inverted)"/>
+    <param name="timeFromLidar" value="$(arg timeFromLidar)"/>
+    <param name="ntp" value="$(arg ntp)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar3/scan"/>
+  </node>
+  <node pkg="$(arg pkg)" type="ros_main" name="olelidar4" output="screen">
+    <param name="device" value="$(arg device)"/>
+    <param name="frame_id" value="scan4"/>
+    <param name="scan_ip" value="192.168.2.114"/>
+    <param name="port" value="2370"/>
+    <param name="local_ip" value="192.168.2.123"/>
+    <param name="transport" value="$(arg transport)"/>
+    <param name="inverted" value="$(arg inverted)"/>
+    <param name="timeFromLidar" value="$(arg timeFromLidar)"/>
+    <param name="ntp" value="$(arg ntp)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar4/scan"/>
+  </node>
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan1" args="-2.36 -1.37 0 1.57 0 3.14 base_link scan1"/> --> -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan4" args="2.36 -1.37 0 1.57 0 3.14 base_link scan4"/> -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan3" args="-2.36 1.37 0 -1.57 0 3.14 base_link scan3"/> -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan2" args="2.36 1.37 0 -1.57 0 3.14 base_link scan2"/> --> -->
+ 
+  <!-- <node pkg="rviz" type="rviz" name="rviz_olelidar" args="-d $(find olelidar)/olelidar.rviz" output="screen"/> -->
+
+
+
+
+
+
+
+
+</launch>

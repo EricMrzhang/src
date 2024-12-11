@@ -1,0 +1,14 @@
+ <launch>
+    <node pkg="pathtrack" type="pathtrack" name="pathtrack" output="screen">
+        <param name="run_enable" value="true"/>
+        <param name="mqtt_stop_enable" value="true"/>
+        <param name="obs_stop_enable" value="true"/>
+        <param name="traffic_stop_enable" value="true"/>
+        <param name="test_speed" value="0.2"/>
+        <!-- 右偏为负, 左偏为正-->
+        <param name="angle_offset" value="-0.2"/>
+    </node>
+
+    <node pkg="data_comm" name="can_comm" type="can_comm"/>
+
+</launch>

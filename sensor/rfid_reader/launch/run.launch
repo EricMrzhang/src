@@ -1,0 +1,3 @@
+<launch>    
+    <node pkg="rfid_reader" type="rfid_reader_tcp" name="rfid_reader_tcp" output="screen"/> 
+</launch>

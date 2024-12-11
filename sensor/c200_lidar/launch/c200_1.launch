@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="frame_id" default="scan"/>
+  <arg name="host" default="192.168.1.111"/>
+  <arg name="port" default="2111"/>
+  <arg name="range_min" default="0.05"/>
+  <arg name="range_max" default="30"/>
+  <arg name="start_angle" default="-45"/>
+  <arg name="stop_angle" default="225"/>
+  <arg name="offset_angle" default="-90"/>
+  <arg name="filterswitch" default="true"/>
+  <!-- C200 Driver -->
+  <node pkg="c200_lidar" type="c200_lidar_node" name="c200_lidar_node" respawn="true" output="screen">
+    <param name="frame_id" value="$(arg frame_id)"/>
+    <param name="host" value="$(arg host)"/>
+    <param name="port" value="$(arg port)"/>
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <param name="start_angle" value="$(arg start_angle)"/>
+    <param name="stop_angle" value="$(arg stop_angle)"/>
+    <param name="offset_angle" value="$(arg offset_angle)"/>
+    <param name="filterswitch" value="$(arg filterswitch)"/>
+  </node>
+
+
+  
+
+  <!-- RVIZ -->
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find c200_lidar)/rviz/rviz.rviz" required="true" /> -->
+
+</launch>

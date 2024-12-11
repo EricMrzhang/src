@@ -1,0 +1,24 @@
+<launch> 
+    <arg name="c200" value="false"/>
+    <group if="$(arg c200)">
+        <param name="scanlidar" value="c200"/>
+        <include file="$(find c200_lidar)/launch/c200_4.launch"/>
+    </group>
+    <group unless="$(arg c200)">
+        <param name="scanlidar" value="ole"/>
+        <include file="$(find olelidar)/launch/VF.launch"/>
+    </group> 
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan1" args="-2.36 -1.1 0 1.57 0 3.14 base_link scan1"/> -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan4" args="2.36 -1.1 0 1.57 0 3.14 base_link scan4"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan3" args="-2.36 1.1 0 -1.57 0 3.14 base_link scan3"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_scan2" args="2.36 1.1 0 -1.57 0 3.14 base_link scan2"/> -->
+ 
+    <node pkg="laserscan_check" type="laserscan_check" name="laserscan_check" output="screen"/>
+
+    <node pkg="laserscan_check" type="laserscan_check_angle" name="laserscan_check_angle" output="screen">
+        <param name="laser_single_enable" value="true"/>       
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find laserscan_check)/show.rviz" output="screen" respawn="true" respawn_delay="2"/>
+</launch> 

@@ -1,0 +1,7 @@
+ <launch>
+    <!-- 必须先定义agvId -->
+    <!-- <param name="agvId" value="$(env agvId)"/> -->
+
+   <node pkg="mqtt_comm" type="iot_comm" name="iot_comm" respawn="true" output="screen"/>
+   <node pkg="mqtt_comm" type="save_data" name="save_data" output="screen"/>
+ </launch>

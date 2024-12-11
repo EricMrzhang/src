@@ -1,0 +1,60 @@
+# 楼前参数
+map_x_offset: -91.07
+map_y_offset: -2
+map_angle_offset: 0
+
+# 堆场参数
+# map_x_offset: -9
+# map_y_offset: 11.9
+# map_angle_offset: -90
+
+next_path: U_1
+
+pick_path:
+  pose0:
+    map_x: 13
+    map_y: 0
+    heading: -90
+    vel: 0.6
+    lane_type: 24
+  pose1:
+    map_x: 13
+    map_y: -14
+    heading: -90
+    vel: 0.5 
+    
+release_path:
+  type: 1    # 0 表示疏停  1 密停  2 车库
+  pose0:
+    map_x: 13
+    map_y: -14
+    heading: -90
+    vel: 1.5 
+  pose1:
+    map_x: 13
+    map_y: 0
+    heading: -90
+    vel: 1.5
+  pose2:
+    map_x: 0
+    map_y: 0
+    heading: -90
+    vel: 0.8
+    lane_type: 24
+  pose3:
+    map_x: 0
+    map_y: -54
+    heading: -90
+    vel: 0.5         
+
+move_path:
+  pose0:
+    map_x: 0
+    map_y: -14
+    heading: -90
+    vel: 1
+  pose1:
+    map_x: 0
+    map_y: 0
+    heading: -90
+    vel: 0.5  

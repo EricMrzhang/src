@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/bit/byc3.3_ws/devel/include/**",
+        "/home/bit/byc3.2_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/c200_lidar/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/camera_lbas/include/**",
+        "/home/bit/byc3.3_ws/src/share/common/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/gps/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/h264_server/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/olelidar/include/**",
+        "/home/bit/byc3.3_ws/src/control/pawcontrol/include/**",
+        "/home/bit/byc3.3_ws/src/sensor/radar/include/**",
+        "/home/bit/byc3.3_ws/src/control/turntable/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}
